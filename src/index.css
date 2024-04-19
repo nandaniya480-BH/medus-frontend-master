@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*:focus {
+  outline: none;
+}
+
+.multi-range-slider .thumb::before {
+  border: none !important;
+  box-shadow: none !important;
+  background: linear-gradient(60deg, #26c6da, #0097a7) !important;
+}
+.multi-range-slider .bar-inner {
+  background: linear-gradient(60deg, #26c6da, #0097a7) !important;
+}
+.multi-range-slider .bar-inner,
+.multi-range-slider .bar-left,
+.multi-range-slider .bar-right {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 2px 0 !important;
+}
+
+.multi-range-slider .caption {
+  display: none !important;
+}
+
+.sc-dicizt .wrapper {
+  z-index: 9;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+/* STYLES FOR REACT-TAGS-AUTOCOMPLETE */
+.react-tags {
+  position: relative;
+  padding: 0.25rem 0 0 0.25rem;
+  border: 1px solid #eaeef2;
+  border-radius: 6px;
+
+  /* shared font styles */
+  font-size: 1em;
+  line-height: 1.2;
+
+  /* clicking anywhere will focus the input */
+  cursor: text;
+}
+
+.react-tags.is-active {
+  border-color: #0097a7;
+}
+
+.react-tags.is-disabled {
+  opacity: 0.75;
+  background-color: #eaeef2;
+  /* Prevent any clicking on the component */
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.react-tags.is-invalid {
+  border-color: #fd5956;
+  box-shadow: 0 0 0 2px rgba(253, 86, 83, 0.25);
+}
+
+.react-tags__list {
+  /* Do not use display: contents, it's too buggy */
+  display: inline;
+  padding: 0;
+}
+
+.react-tags__list-item {
+  display: inline;
+  list-style: none;
+}
+
+.react-tags__tag {
+  box-sizing: border-box;
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.375rem 0.5rem;
+  border: 0;
+  border-radius: 9999px;
+  background: #eaeef2;
+
+  /* match the font styles */
+  font-size: 13px;
+  font-weight: 700;
+  line-height: inherit;
+}
+
+.react-tags__tag:hover {
+  color: #ffffff;
+  background-color: #fd5956;
+}
+
+.react-tags__tag::after {
+  content: '✕';
+  font-weight: 700;
+  margin-left: 0.25rem;
+  font-size: 12px !important;
+}
+
+.react-tags__tag:not(:hover)::after {
+  color: #7c7d86;
+}
+
+.react-tags__combobox {
+  display: inline-block;
+
+  /* match tag layout */
+  padding: 0.375rem 0.25rem;
+  margin-bottom: 0.25rem;
+
+  /* prevents autoresize overflowing the container */
+  max-width: 100%;
+}
+
+.react-tags__combobox-input {
+  /* prevent autoresize overflowing the container */
+  max-width: 100%;
+
+  /* remove styles and layout from this element */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+
+  /* match the font styles */
+  font-size: 13px;
+  line-height: inherit;
+}
+
+.react-tags__combobox-input::placeholder {
+  color: #7c7d86;
+  opacity: 1;
+}
+
+.react-tags__listbox {
+  position: absolute;
+  z-index: 5;
+  color: rgb(107 114 128 / 0.95);
+  top: calc(100% + 5px);
+
+  /* Negate the border width on the container */
+  left: -2px;
+  right: -2px;
+
+  max-height: 10rem;
+  overflow-y: auto;
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 6px;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.react-tags__listbox-option {
+  padding: 0.5rem 0.5rem;
+  font-weight: 600;
+}
+
+.react-tags__listbox-option:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #eaeef2;
+}
+
+.react-tags__listbox-option[aria-disabled='true'] {
+  color: #7c7d86;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.react-tags__listbox-option[aria-selected='true'] {
+  color: #0097a7;
+  display: none;
+}
+
+.react-tags__listbox-option[aria-selected='true']::after {
+  content: '✓';
+  margin-left: 0.5rem;
+  color: #0097a7;
+}
+
+.bg-radial-gradient {
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#0097a9 0.5px, #fff 0.5px);
+  background-size: 10px 10px;
+}
+
+.preview-btn {
+  position: relative;
+  overflow: hidden;
+  height: 2.5rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #505051;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+}
+
+.preview-btn:hover {
+  transform: scale(1.01);
+}
+
+.preview-btn:hover::before {
+  transform: scale(1.01);
+}
+
+.preview-btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+.preview-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(28, 176, 196) 10.8%,
+    rgba(0, 151, 167, 1) 94.3%
+  );
+  transition: all 0.215s;
+}
+
+.swiper-3d.swiper-slide-shadow {
+  background: transparent !important;
+}
+
+.react-tags__listbox {
+  min-height: 250px;
+}
