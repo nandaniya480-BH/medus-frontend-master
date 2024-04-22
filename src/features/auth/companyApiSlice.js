@@ -9,6 +9,7 @@ export const companyAuthApi = createApi({
       const token = getState().auth.userToken;
       if (token) {
         headers.set('authorization', `Bearer ${token}`);
+        headers.set('ngrok-skip-browser-warning', `12`);
         return headers;
       }
     },

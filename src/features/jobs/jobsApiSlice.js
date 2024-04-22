@@ -5,6 +5,10 @@ export const jobsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: baseApiUrl,
   }),
+  prepareHeaders: (headers) => {
+    headers.set('ngrok-skip-browser-warning', `12`);
+    return headers;
+  },
   tagTypes: ['Jobs'],
   endpoints: (builder) => ({
     getJobs: builder.query({

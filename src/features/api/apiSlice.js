@@ -6,6 +6,10 @@ export const getApiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: baseApiUrl,
   }),
+  prepareHeaders: (headers) => {
+    headers.set('ngrok-skip-browser-warning', `12`);
+    return headers;
+  },
   tagTypes: [
     'Categories',
     'SubCategories',
@@ -20,6 +24,10 @@ export const getApiSlice = createApi({
   endpoints: (builder) => ({
     getCategories: builder.query({
       query: () => 'job-categories',
+      prepareHeaders: (headers) => {
+        headers.set('ngrok-skip-browser-warning', `12`);
+        return headers;
+      },
       transformResponse: (response) => {
         return response?.data?.map((category) => ({
           value: category.id,
@@ -86,6 +94,10 @@ export const getApiSlice = createApi({
     }),
     getEmployerCategories: builder.query({
       query: () => 'employer-categories',
+      prepareHeaders: (headers) => {
+        headers.set('ngrok-skip-browser-warning', `12`);
+        return headers;
+      },
       transformResponse: (response) => {
         return response?.data?.map((employerCategories) => ({
           value: employerCategories.id,

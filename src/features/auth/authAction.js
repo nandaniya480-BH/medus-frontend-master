@@ -9,6 +9,7 @@ export const login = createAsyncThunk(
       const config = {
         headers: {
           'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': '12'
         },
         body: JSON.stringify({ email, password }),
       };
@@ -40,6 +41,7 @@ export const register = createAsyncThunk(
       const config = {
         headers: {
           'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': '12'
         },
       };
       const { data } = await axios.post(
